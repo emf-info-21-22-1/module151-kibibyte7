@@ -5,7 +5,7 @@
  * @version 1.0 / 20-SEP-2013
  */
 
-var BASE_URL = "METTEZ L'URL D'ADRESSE DU PHP DU SERVEUR";
+var BASE_URL = "https://abrahaml.emf-informatique.ch/exercice5/joueurs.php";
 
 /**
  * Fonction permettant de charger les données d'équipe.
