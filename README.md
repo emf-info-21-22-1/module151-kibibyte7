@@ -25,3 +25,9 @@ Votre descriptif du cahier des charges ici
 - [X] Modification de l'état d'une tâche
 - [ ] Edition du détail de la tâche (Nom, description, temps passé dessus) 
 
+### Liens sur l'hébergement
+- [Page d'accueil](https://abrahaml.emf-informatique.ch/151/client/)
+- [Page d'inscription](https://abrahaml.emf-informatique.ch/151/client/register)
+- [Page de connexion](https://abrahaml.emf-informatique.ch/151/client/login)
+- [Page du tableau de bord](https://abrahaml.emf-informatique.ch/151/client/dashboard) (Accessible seulment si utilisateur logué)
+- [Page d'aide](https://abrahaml.emf-informatique.ch/151/client/about)
