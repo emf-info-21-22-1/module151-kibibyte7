@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.no-select {
+  user-select: none;
+}
+
+::selection{
+  background-color: #f472b6;
+  color:white;
+}
+
+/* Styles généraux pour les checkboxes */
+input[type="checkbox"] {
+  /* Cacher la coche par défaut */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Taille de la checkbox */
+  width: 16px;
+  height: 16px;
+  /* Style de la bordure et fond */
+  border: 1px solid #000000;
+  border-radius:20px;
+  background-color: #fff;
+  /* Positionnement de la coche */
+  position: relative;
+  top:2px;
+}
+
+/* Style de la coche lorsque la checkbox est cochée */
+input[type="checkbox"]:checked {
+  /* Fond coloré rose pour la coche */
+  background-color: #f472b6; /* Rose */
+  border: 1px solid #f472b6; /* Bordure rose */
+}
+
+/* Style de la coche elle-même */
+input[type="checkbox"]::before {
+  /* Contenu Unicode de la coche (checkmark) */
+  content: '\2713';
+  /* Positionnement absolu au centre de la checkbox */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Translation pour centrer la coche */
+  transform: translate(-50%, -50%);
+  /* Couleur de la coche */
+  color: #fff;
+  /* Visibilité par défaut à 0 (cachée) */
+  opacity: 0;
+}
+
+/* Style de la coche lorsque la checkbox est cochée */
+input[type="checkbox"]:checked::before {
+  /* Opacité à 1 pour rendre la coche visible */
+  opacity: 1;
+}
+
+.btn {
+  border: none;
+  color:white;
+  padding: 10px;
+  background: linear-gradient(to bottom left, #f472b6 50%, #676767 30%);
+  background-size: 200% 200%;
+  font-size:17px;
+  font-weight: 500;
+  border-radius: 25px;
+  background-position: bottom left;
+  transition: background-position 0.5s ease;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-position: top right;
+  color:white;
+}
+
+body{
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
