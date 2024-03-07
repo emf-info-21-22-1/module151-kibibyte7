@@ -4,8 +4,10 @@ Repository du projet personnel du module 151
 ## CrystalDevTracker_
 
 ### Description du projet
-Ce projet est un outil qui va permettre de faire de la gestion de projet, elle vise les devs principalement. 
-Dans ce site on pourra créer des projets, et gérer les tâches qui y sont liés. Une fois la tâche créée on pourra éditer les détails, notemment ajouter les heures passé dessus.
+Ce projet est un outil qui va permettre de faire de la gestion de projet, elle vise les devs principalement. Dans ce site on pourra créer des projets, et gérer les tâches qui y sont liés. Une fois la tâche créée on pourra éditer les détails, notemment ajouter les heures passé dessus.
+
+### Poruquoi ce projet ?
+J’ai choisi de faire ce projet car il peut m’être très utile dans le cadre pro, et je compte également le faire évouler d’avantage dans un futur proche.
 
 ### Arborescence
 - L'analyse et les différents tests technos sont effectués dans /exercices
