@@ -18,7 +18,6 @@ J’ai choisi de faire ce projet car il peut m’être très utile dans le cadre
 - [X] Résistance aux injections HTML/CSS/JS côté client
 - [X] Résistance aux injections SQL côté serveur
 - [X] Création d'un utilisateur
-- [X] Vérification de l'existence d'un nom d'utilisateur
 - [X] Vérification de la complexité du mot de passe
 - [X] Se connecter
 - [X] Se déconnecter
