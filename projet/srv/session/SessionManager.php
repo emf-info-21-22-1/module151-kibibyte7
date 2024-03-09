@@ -18,8 +18,7 @@ class SessionManager
         session_start();
     }
 
-    public function login($username, $password)
-    {
+    public function login($username, $password){
 
         $wrk = new UserWrk();
 
@@ -53,12 +52,12 @@ class SessionManager
 
                     }
 
-                    $res = writeJSONResponse(UNAUTHORIZED, "Le mot de passe est incorrect, veuillez réessayer", array());
+                    $res = writeJSONResponse(UNAUTHORIZED, "Le mot de passe ou le username est incorrect, veuillez réessayer", array());
 
                 }
             } else {
 
-                $res = writeJSONResponse(UNAUTHORIZED, "Ce nom d'utilisateur n'existe pas dans la base de données", array());
+                $res = writeJSONResponse(UNAUTHORIZED, "Le mot de passe ou le username est incorrect, veuillez réessayer", array());
 
             }
         }

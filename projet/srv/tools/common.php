@@ -39,11 +39,17 @@ function writeJSONResponse($code, $message, $data){
     return $json;
 }
 
+/**
+ * Initialise une variable à partir des données JSON de la requête.
+ *
+ * @param string $key La clé de la variable à extraire du tableau JSON.
+ * @return mixed|null Retourne la valeur associée à la clé spécifiée, ou null si la clé n'existe pas.
+ */
 function initVariableFromJson($key){
     
     $data = json_decode(file_get_contents("php://input"), true);
 
-    return $data[$key];
+    return isset($data[$key]) ? $data[$key] : null;
 }
 
 ?>

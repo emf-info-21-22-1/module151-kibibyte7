@@ -2,10 +2,34 @@
 include_once 'connexion/Connexion.php';
 include_once 'beans/Project.php';
 
-class ProjectWrk {
+/**
+ * Classe représentant un projet de travail (ProjectWrk).
+ *
+ * @package wrk
+ */
+class ProjectWrk
+{
 
-    public function addProject($name, $description, $fk_user) {
-        
+    /**
+     * Ajoute un nouveau projet.
+     *
+     * @param string $name Le nom du projet.
+     * @param string $description La description du projet.
+     * @param int $fk_user L'identifiant de l'utilisateur associé au projet.
+     * @return bool Retourne true si le projet a été ajouté avec succès, sinon false.
+     */
+    public function addProject($name, $description, $fk_user)
+    {
+
+        $nameNeedsEscapes = preg_match('/<[^>]+>/', $name);
+        $descriptionNeedsEscapes = preg_match('/<[^>]+>/', $description);
+
+        if ($nameNeedsEscapes <> 0)
+            $name = strip_tags($name);
+        if ($descriptionNeedsEscapes <> 0)
+            $description = strip_tags($description);
+
+
         $params = array("name" => $name, "description" => $description, "fk_user" => $fk_user);
 
         $affectedLines = Connexion::getInstance()->executeQuery("INSERT INTO t_projet(nom, description, fk_user) VALUES (:name, :description, :fk_user);", $params);
@@ -14,11 +38,18 @@ class ProjectWrk {
 
     }
 
-    public function loadProjects($fk_user) {
+    /**
+     * Charge les projets associés à un utilisateur.
+     *
+     * @param int $fk_user L'identifiant de l'utilisateur pour lequel charger les projets.
+     * @return array Retourne un tableau contenant les informations des projets chargés.
+     */
+    public function loadProjects($fk_user)
+    {
 
         $res = [];
         $i = 0;
-        $params = array("fk_user"=> $fk_user);
+        $params = array("fk_user" => $fk_user);
 
         $rows = Connexion::getInstance()->SelectQuery("SELECT * FROM t_projet WHERE fk_user = :fk_user", $params);
 
@@ -29,11 +60,11 @@ class ProjectWrk {
             $project->initFromDb($row);
 
             $res[$i] = [
-                "name"=> $project->getNom(),
+                "name" => $project->getNom(),
                 "description" => $project->getDescription(),
-                "dateCreation"=> $project->getDateCreation(),
-                "pk_projet"=> $project->getPKProjet(),
-                "fk_user"=> $project->getFkUser()
+                "dateCreation" => $project->getDateCreation(),
+                "pk_projet" => $project->getPKProjet(),
+                "fk_user" => $project->getFkUser()
             ];
 
             $i++;
@@ -42,7 +73,15 @@ class ProjectWrk {
         return $res;
     }
 
-    public function getProject($pk_projet, $fk_user){
+    /**
+     * Récupère un projet spécifique associé à un utilisateur.
+     *
+     * @param int $pk_projet L'identifiant unique du projet.
+     * @param int $fk_user L'identifiant de l'utilisateur associé au projet.
+     * @return Project|'' Retourne un objet Project si le projet est trouvé, sinon une chaîne vide.
+     */
+    public function getProject($pk_projet, $fk_user)
+    {
 
         $params = array("pk_projet" => $pk_projet, "fk_user" => $fk_user);
 
@@ -50,7 +89,7 @@ class ProjectWrk {
 
         $res = '';
 
-        if ($row){
+        if ($row) {
 
             $project = new Project();
 

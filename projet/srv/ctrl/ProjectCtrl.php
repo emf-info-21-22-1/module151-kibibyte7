@@ -33,7 +33,7 @@ class ProjectCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -57,7 +57,7 @@ class ProjectCtrl
             $res = writeJSONResponse(OK, "Liste des projets retournés", $liste);
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -102,7 +102,7 @@ class ProjectCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 

@@ -31,7 +31,7 @@ class TaskCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -63,7 +63,7 @@ class TaskCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -96,7 +96,7 @@ class TaskCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -129,7 +129,7 @@ class TaskCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
@@ -153,7 +153,7 @@ class TaskCtrl
 
         } else {
 
-            $res = writeJSONResponse(FORBIDEN, "Utilisateur non logué", array());
+            $res = writeJSONResponse(FORBIDDEN, "Utilisateur non logué", array());
 
         }
 
